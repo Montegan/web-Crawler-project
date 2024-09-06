@@ -1,0 +1,15 @@
+{
+  "name": "web-crawler-project",
+  "version": "1.0.0",
+  "description": "a web crawler that will be used to get the inner links of web apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
