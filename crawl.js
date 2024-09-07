@@ -21,6 +21,7 @@ async function startCrawl(baseURL, currentURL, pages) {
   console.log(`Actively crawling current URL:${currentURL}`);
   try {
     const resp = await fetch(currentURL);
+
     if (resp.status > 399) {
       console.log(`Fetch failled with code: ${resp.status} on page ${baseURL}`);
       return pages;
@@ -52,7 +53,7 @@ function normalizeUrl(urlString) {
   const input = new URL(urlString);
   let finalurl;
   if (input.pathname[input.pathname.length - 1] === "/") {
-    const trimedPath = input.pathname.slice(0, 5);
+    const trimedPath = input.pathname.slice(0, input.pathname.length - 1);
     //console.log(trimedPath);
     return (finalurl = input.hostname + trimedPath);
   } else {

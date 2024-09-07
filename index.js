@@ -1,4 +1,5 @@
 const { startCrawl } = require("./crawl");
+const { formatReport } = require("./crawlReport");
 
 async function main() {
   if (process.argv.length < 3) {
@@ -10,7 +11,8 @@ async function main() {
   }
   const baseURL = process.argv[2];
   const pages = await startCrawl(baseURL, baseURL, {});
-  console.log(pages);
+  formatReport(pages);
+  // console.log(pages);
   // console.log(baseURL);
 }
 main();
